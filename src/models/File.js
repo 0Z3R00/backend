@@ -21,7 +21,9 @@ const File = new mongoose.Schema({
     });
 // criar um arquivo virtual para q o frontend possa acessar o arquivo
 File.virtual('url').get(function () {
-    return `http://localhost:3333/files/${encodeURIComponent(this.path)}`;
+    const url = process.env.URL || 'http://localhost:3333'
+
+    return `${url}/files/${encodeURIComponent(this.path)}`;
 
 })
 //exportar a varialvel Box, e passar como parametro as configuraçoes do Schema.
