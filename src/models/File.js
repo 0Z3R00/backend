@@ -27,4 +27,4 @@ File.virtual('url').get(function () {
 
 })
 //exportar a varialvel Box, e passar como parametro as configuraçoes do Schema.
-module.exports = mongoose.model('File', File)
+module.exports = mongoose.model('File', File);
