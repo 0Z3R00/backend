@@ -21,7 +21,7 @@ const File = new mongoose.Schema({
     });
 // criar um arquivo virtual para q o frontend possa acessar o arquivo
 File.virtual('url').get(function () {
-    const url = process.env.URL || 'http://localhost:3333'
+    const url = process.env.URL || 'http://localhost:3333';
 
     return `${url}/files/${encodeURIComponent(this.path)}`;
 
